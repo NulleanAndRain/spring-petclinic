@@ -10,15 +10,13 @@ pipeline {
 
         stage('Archive') {
             steps {
-                script {
-                    zip zipFile: env.BUILD_NUMBER.toString() + '.zip', dir: 'Test/bin/Release'
-                }
+                bat "D:\\tmp\\_apache-maven-3.8.4\\bin\\mvn.cmd -Dbuild_version=${build_version} package"
             }
         }
 
-        stage('Unarchive') {
+        stage('Publish') {
             steps {
-                unzip zipFile: env.BUILD_NUMBER.toString() + '.zip', dir: 'G:\\deploy\\' + env.BUILD_NUMBER.toString()
+                bat "move /Y \"${workspace}\\target\\jenkins-sample-*\" C:\\Users\\mrshc\\Downloads"
             }
         }
     }
