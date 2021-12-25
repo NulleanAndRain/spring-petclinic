@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "/c/Users/Алексей/Downloads/_apache-maven-3.8.4/bin/mvn.cmd package"
+                bat "C:\Users\Алексей\Downloads\_apache-maven-3.8.4\bin\mvn.cmd package"
             }
         }
 
