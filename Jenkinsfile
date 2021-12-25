@@ -9,12 +9,14 @@ pipeline {
         }
         stage('Archive'){
             steps{
-                bat 'rar.bat'
+                script {
+                    zip zipFile: env.BUILD_NUMBER.toString() + '.zip', dir: 'target'
+                }
             }
         }
         stage('Publish'){
             steps{
-                bat 'derar.bat'
+                unzip zipFile: env.BUILD_NUMBER.toString() + '.zip', dir: 'G:\\deploy\\' + env.BUILD_NUMBER.toString()
             }
         }
     }
