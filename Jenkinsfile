@@ -4,9 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withMaven {
-                  sh "mvn compile"
-                }
+                sh "_apache-maven-3.8.4\bin\mvn.cmd compile"
             }
         }
 
