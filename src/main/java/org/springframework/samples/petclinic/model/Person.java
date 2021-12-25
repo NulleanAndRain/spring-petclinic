@@ -59,7 +59,7 @@ public class Person extends BaseEntity {
 		return this.age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(int age) throws IllegalArgumentException {
 		if (age < 0 || age > 150) 
 			throw new IllegalArgumentException("Age must be in range 0 - 150");
 		this.age = age;
