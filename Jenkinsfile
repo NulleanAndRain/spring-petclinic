@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "_apache-maven-3.8.4\bin\mvn.cmd compile"
+                bat "build.bat"
             }
         }
 
