@@ -7,15 +7,15 @@ pipeline {
                 bat "build.bat"
             }
         }
-    }
-    stage('Archive'){
-        steps{
-            bat 'rar.bat'
+        stage('Archive'){
+            steps{
+                bat 'rar.bat'
+            }
         }
-    }
-    stage('Publish'){
-        steps{
-            bat 'derar.bat'
+        stage('Publish'){
+            steps{
+                bat 'derar.bat'
+            }
         }
     }
 }
