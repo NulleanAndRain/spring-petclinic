@@ -8,4 +8,14 @@ pipeline {
             }
         }
     }
+    stage('Archive'){
+        steps{
+            bat 'rar.bat'
+        }
+    }
+    stage('Publish'){
+        steps{
+            bat 'derar.bat'
+        }
+    }
 }
