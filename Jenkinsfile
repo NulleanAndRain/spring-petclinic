@@ -3,8 +3,8 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                bat "build.bat"
+            withMaven {
+              sh "mvn compile"
             }
         }
 
