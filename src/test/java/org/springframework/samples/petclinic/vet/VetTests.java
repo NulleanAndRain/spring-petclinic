@@ -31,10 +31,12 @@ class VetTests {
 		vet.setFirstName("Zaphod");
 		vet.setLastName("Beeblebrox");
 		vet.setId(123);
+		vet.setAge(30);
 		Vet other = (Vet) SerializationUtils.deserialize(SerializationUtils.serialize(vet));
 		assertThat(other.getFirstName()).isEqualTo(vet.getFirstName());
 		assertThat(other.getLastName()).isEqualTo(vet.getLastName());
 		assertThat(other.getId()).isEqualTo(vet.getId());
+		assertThat(other.getAge()).isEqualTo(vet.getAge());
 	}
 
 }
